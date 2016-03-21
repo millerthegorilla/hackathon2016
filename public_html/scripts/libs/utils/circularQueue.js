@@ -1,6 +1,6 @@
-ImportJS.pack('utils.circularQueue', function(module) 
+ImportJS.pack('libs.utils.circularQueue', function(module) 
 {
-	var collection = this.import('utils.collection');
+	var collection = this.import('libs.utils.collection');
 	var index = 0;
 	var reverse = false;
 	
@@ -8,6 +8,11 @@ ImportJS.pack('utils.circularQueue', function(module)
 	{
 		collection.call(this);
 		collection.injectClassMethods(this._collection, circularQueue.prototype);
+		this._collection.pushOn = function(val)
+		{
+			index++;
+			this.push(val);
+		};
 		console.log(this);
 		Object.defineProperty(this._collection, 
 							  "next", 
@@ -49,6 +54,8 @@ ImportJS.pack('utils.circularQueue', function(module)
 							  });
 		return(this._collection);
 	};
+	
+
 	
 	circularQueue.prototype = Object.create(collection.prototype);
 	circularQueue.constructor = circularQueue;

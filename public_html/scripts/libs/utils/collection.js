@@ -1,4 +1,4 @@
-ImportJS.pack('utils.collection', function(module)
+ImportJS.pack('libs.utils.collection', function(module)
 {		
 // Define the collection class.
 

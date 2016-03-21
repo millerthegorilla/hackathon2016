@@ -1,4 +1,4 @@
-ImportJS.pack('utils.point',function(module,exports) 
+ImportJS.pack('libs.utils.point',function(module,exports) 
 {
 	var utils = this.import('utils.utils');
 	
