@@ -155,5 +155,6 @@ ImportJS.pack('libs.utils.collection', function(module)
 		}
 		this.length = 0;
 	};
+	
 	module.exports = Collection;
 });

@@ -91,6 +91,7 @@ ImportJS.pack('ui.ui', function(module)
                 color = Common.choose(['#556270', '#4ECDC4', '#C7F464', '#FF6B6B', '#C44D58']);
 
         $(data).find('path').each(function(i, path) {
+				console.log(i);
                 vertexSets.push(Vertices.scale(Svg.pathToVertices(path, 30),canvas.clientWidth * 0.000106, canvas.clientHeight * 0.000185 ));
             });
 			that.hand = Bodies.fromVertices(-10, 100, vertexSets, {
@@ -118,7 +119,7 @@ ImportJS.pack('ui.ui', function(module)
 						var points = Svg.pathToVertices(path);
 						vertexSets.push(Vertices.scale(points, canvas.clientWidth * 0.000106, -(canvas.clientHeight * 0.000185)));
 					});
-					vertexSuperSet.pushOn(vertexSets.slice());
+					vertexSuperSet.push(vertexSets.slice());
 					loaded(that);
 				});
 			})(i);
